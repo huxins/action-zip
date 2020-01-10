@@ -17,7 +17,7 @@ RUN apk update --quiet && \
 		zip && \
 	pip install --quiet --no-cache-dir coscmd && \
 	coscmd config \
-		${INPUT_SECRET_ID:--a} ${INPUT_SECRET_ID:-} \
-		${INPUT_SECRET_KEY:--s} ${INPUT_SECRET_KEY:-} \
-		${INPUT_BUCKETNAME_APPID:--b} ${INPUT_BUCKETNAME_APPID:-} \
-		${INPUT_REGION:--r} ${INPUT_REGION:-}
+		${INPUT_SECRET_ID:+-a} ${INPUT_SECRET_ID:-} \
+		${INPUT_SECRET_KEY:+-s} ${INPUT_SECRET_KEY:-} \
+		${INPUT_BUCKETNAME_APPID:+-b} ${INPUT_BUCKETNAME_APPID:-} \
+		${INPUT_REGION:+-r} ${INPUT_REGION:-}

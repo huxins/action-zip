@@ -9,4 +9,9 @@ LABEL "repository"="https://github.com/montudor/action-zip"
 LABEL "homepage"="https://github.com/montudor/action-zip"
 LABEL "maintainer"="Monte Hellawell <monte@montudor.com>"
 
-RUN apk add zip
+RUN apk update && \
+	apk add --no-cache \
+		ca-certificates \
+		curl \
+		subversion \
+		zip

@@ -16,4 +16,8 @@ RUN apk update --quiet && \
 		subversion \
 		zip && \
 	pip install --quiet --no-cache-dir coscmd && \
-	coscmd config -a $INPUT_SECRET_ID -s $INPUT_SECRET_KEY -b $INPUT_BUCKETNAME_APPID -r $INPUT_REGION
+	coscmd config \
+		${INPUT_SECRET_ID:--a} ${INPUT_SECRET_ID:-} \
+		${INPUT_SECRET_KEY:--s} ${INPUT_SECRET_KEY:-} \
+		${INPUT_BUCKETNAME_APPID:--b} ${INPUT_BUCKETNAME_APPID:-} \
+		${INPUT_REGION:--r} ${INPUT_REGION:-}

@@ -1,4 +1,4 @@
-FROM alpine:3.10.1
+FROM python:3.6-alpine
 
 LABEL "com.github.actions.name"="Create Zip File"
 LABEL "com.github.actions.description"="Create a zip file containing specific files from your repository"
@@ -14,4 +14,6 @@ RUN apk update --quiet && \
 		ca-certificates \
 		curl \
 		subversion \
-		zip
+		zip && \
+	pip install --quiet --no-cache-dir coscmd && \
+	coscmd config -a $INPUT_SECRET_ID -s $INPUT_SECRET_KEY -b $INPUT_BUCKETNAME_APPID -r $INPUT_REGION

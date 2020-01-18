@@ -14,5 +14,7 @@ RUN apk update --quiet && \
 		ca-certificates \
 		curl \
 		subversion \
+		git \
+		git-svn \
 		zip && \
 	pip install --quiet --no-cache-dir coscmd

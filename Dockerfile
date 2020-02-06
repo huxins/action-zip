@@ -17,5 +17,6 @@ RUN apk update --quiet && \
 		git \
 		git-svn \
 		sshpass \
+		openssh-client \
 		zip && \
 	pip install --quiet --no-cache-dir coscmd

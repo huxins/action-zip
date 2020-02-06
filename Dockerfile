@@ -16,5 +16,6 @@ RUN apk update --quiet && \
 		subversion \
 		git \
 		git-svn \
+		sshpass \
 		zip && \
 	pip install --quiet --no-cache-dir coscmd

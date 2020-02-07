@@ -1,4 +1,4 @@
-FROM python:3.6-alpine
+FROM centos:centos7.7.1908
 
 LABEL "com.github.actions.name"="Create Zip File"
 LABEL "com.github.actions.description"="Create a zip file containing specific files from your repository"
@@ -9,14 +9,11 @@ LABEL "repository"="https://github.com/montudor/action-zip"
 LABEL "homepage"="https://github.com/montudor/action-zip"
 LABEL "maintainer"="Monte Hellawell <monte@montudor.com>"
 
-RUN apk update --quiet && \
-	apk add --quiet --no-cache \
-		ca-certificates \
+RUN yum install -y \
 		curl \
 		subversion \
 		git \
 		git-svn \
 		sshpass \
-		openssh-client \
 		zip && \
-	pip install --quiet --no-cache-dir coscmd
+	svn --version

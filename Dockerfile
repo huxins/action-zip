@@ -15,5 +15,6 @@ RUN yum install -y \
 		git \
 		git-svn \
 		sshpass \
+		unzip \
 		zip && \
 	svn --version

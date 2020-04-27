@@ -11,6 +11,7 @@ LABEL "maintainer"="Monte Hellawell <monte@montudor.com>"
 
 RUN yum install -y \
 		curl \
+		wget \
 		subversion \
 		git \
 		git-svn \
